@@ -35,7 +35,17 @@ public class IhmContact2 extends JPanel {
 
     private JTextField              champNom, champPrenom, champMail, champTel;
     private GridLayout              gridContacts, gridInfoPerso, gridCoordonnées, gridDispoHobby;
-    private JPanel                  panInfoPerso, panCoordonnées, panDispoHobby, panOptions, panNomPrenom, panDate, panHobbies, panDispo;
+    private JPanel                  panInfoPerso = new JPanel();
+    private JPanel                  panCoordonnées = new JPanel();
+    private JPanel                  panDispoHobby = new JPanel();
+    private JPanel                  panOptions = new JPanel();
+    private JPanel                  panNomPrenom = new JPanel();
+    private JPanel                  panDate = new JPanel();
+    private JPanel                  panMailTel = new JPanel();
+    private JPanel                  panHobbies = new JPanel();
+    private JPanel                  panDispo = new JPanel();
+    private JPanel                  panRegion = new JPanel();
+            
     private JComboBox               comboJours, comboMois, comboAnnee, comboRegion;   
     private JCheckBox[]             checkHobbies;
     private JRadioButton[]          radioDispo;
@@ -47,6 +57,9 @@ public class IhmContact2 extends JPanel {
     private HashSet<JRadioButton>   listeRadioDispo; 
     private HashSet<JCheckBox>      listeCheckHobbies ; 
     
+    private JButton                 btnValider = new JButton("Valider");
+    private JButton                 btnAnnuler = new JButton("Annuler");
+    private JButton                 btnTester = new JButton("Tester");
     /*
      * Formulaire pour saisir les informations relatives à un contact
      */
@@ -116,6 +129,23 @@ public class IhmContact2 extends JPanel {
         panInfoPerso.add(new JLabel("Date de naissance : "));
         panInfoPerso.add(panDate);
         
+        // Coordonnées
+        panMailTel.add(new JLabel("Mail : "));
+        champMail = new JTextField(50);
+        panMailTel.add(champMail);
+        
+        panMailTel.add(new JLabel("Telephone : "));
+        champTel = new JTextField(10);
+        panMailTel.add(champTel);
+        
+        panCoordonnées.add(panMailTel);
+        
+        //Region
+        panRegion.add(new JLabel("Region : "));
+        comboRegion = new JComboBox(Region.values());
+        panRegion.add(comboRegion);
+
+        panCoordonnées.add(panRegion);
         
         
         
@@ -149,7 +179,9 @@ public class IhmContact2 extends JPanel {
         panDispoHobby.add(panDispo);
         panDispoHobby.add(panHobbies);
         
-        
+        panOptions.add(btnValider);
+        panOptions.add(btnTester);
+        panOptions.add(btnAnnuler);
         
         this.add(panInfoPerso);
         this.add(panCoordonnées);
