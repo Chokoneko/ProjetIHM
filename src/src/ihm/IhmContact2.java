@@ -163,7 +163,7 @@ public class IhmContact2 extends JPanel {
             listeCheckHobbies.add( checkHobbies[hobby.ordinal()]);          
         }
         
-                //disponibilité
+            //disponibilité
         
         panDispo = new JPanel() ;
         groupDispo = new ButtonGroup();
