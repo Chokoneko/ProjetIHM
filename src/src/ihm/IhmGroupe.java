@@ -1,7 +1,9 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package m2105.ihm;
+package src.ihm;
+
+//Test ! <3
 
 import java.awt.BorderLayout;
 import java.awt.Canvas;

@@ -1,7 +1,7 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package m2105.ihm;
+package src.ihm;
 //TODO changer police et couleur pour toute la page (par defaut)
 import java.awt.BorderLayout;
 import java.awt.Color;
