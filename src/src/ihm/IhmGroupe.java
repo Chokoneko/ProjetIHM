@@ -38,12 +38,13 @@ public class IhmGroupe extends javax.swing.JPanel {
     private IhmLogo         ihmLogo;
     private IhmBoiteMessage ihmBM;
     private JTextField      champNom;
-    private JPanel          panWorkspace, panSCENTER, panSSOUTH, panSWEST, panSEAST, panNORTH, panCENTER, panSOUTH ; 
+    private JPanel          panDroite,panGauche, panNomGroupe,panLogo,panSymboles,panOption,panTableContact ; 
     private JButton         btnValider, btnEffacer, btnAnnuler, btnSupprGrp ;
     private JTable          tableContacts ;
     private DefaultTableModel model;
     private JCheckBox[]      checkSymboles; 
     private HashSet<JCheckBox> listeCheckSymboles ; 
+    private GridLayout      grilleWorkspace,grillePanGauche ;
     
     
     
@@ -65,50 +66,39 @@ public class IhmGroupe extends javax.swing.JPanel {
      */
     private void initUIComponents() {      
         
-        
-        
-        //Champ texte nom groupe
         ihmBM = new IhmBoiteMessage();
         
-        panWorkspace= new JPanel () ;
         
-        panNORTH=new JPanel();
-        panCENTER=new JPanel();
-        panSOUTH=new JPanel();
+      // Organisation de l'espace de travail        
+        grilleWorkspace = new GridLayout(1,2);
+        this.setLayout(grilleWorkspace);
         
-
+        grillePanGauche = new GridLayout(4,1);
+        panGauche = new JPanel();
+        panGauche.setLayout(grillePanGauche);
+        this.add(panGauche);
         
-        panSSOUTH=new JPanel();
-        panSCENTER=new JPanel();
-        panSEAST=new JPanel();
-        panSWEST=new JPanel();
+        panDroite = new JPanel();      
+        this.add(panDroite);
         
         
-        panWorkspace.setLayout(new BorderLayout());
-        panWorkspace.add(panNORTH,BorderLayout.NORTH);
-        panWorkspace.add(panCENTER,BorderLayout.CENTER);
-        panWorkspace.add(panSOUTH,BorderLayout.SOUTH);
         
-        panNORTH.setLayout(new BorderLayout());
-        panSOUTH.setLayout(new BorderLayout());
-        
-        panNORTH.add(new JLabel("Nom :"),BorderLayout.WEST);
+          //Champ texte nom groupe
+       
+        panNomGroupe = new JPanel();
+        panNomGroupe.add(new JLabel("Nom :"));
         champNom = new JTextField(30);
-        panNORTH.add(champNom, BorderLayout.CENTER);
+        panNomGroupe.add(champNom);
         
-        panSOUTH.add(panSSOUTH, BorderLayout.SOUTH);
-        panSOUTH.add(panSCENTER, BorderLayout.CENTER);
-        panSOUTH.add(panSEAST, BorderLayout.EAST);
-        panSOUTH.add(panSWEST, BorderLayout.WEST);
-        
+       
         // Canvas zone de dessin south/center
         ihmLogo = new IhmLogo();        
         
-        panSCENTER.add(ihmLogo);
+        panLogo.add(ihmLogo);
 
           // Boutton effacer     south   / east
         btnEffacer = new JButton("Effacer");
-        panSEAST.add(btnEffacer);
+        panLogo.add(btnEffacer);
         
         btnEffacer.addMouseListener(new MouseListener(){
             @Override
@@ -213,45 +203,50 @@ public class IhmGroupe extends javax.swing.JPanel {
             }
         });
         
-        
-        panSSOUTH.add(btnValider);
-        panSSOUTH.add(btnAnnuler);
-        panSSOUTH.add(btnSupprGrp);
-        
-        
+        panOption = new JPanel();
+        panOption.add(btnValider);
+        panOption.add(btnAnnuler);
+        panOption.add(btnSupprGrp);
         
         
-        // Tableau liste contacts
         
-
-
-        String[] entetes = {"Prénom", "Nom"};
-        model = new DefaultTableModel();
-        model.setColumnIdentifiers(entetes);
+         // Liste de symboles 
         
-        tableContacts = new JTable(model);
-        JPanel panelTableContact = new JPanel(new BorderLayout());
-        panelTableContact.add(tableContacts.getTableHeader(), BorderLayout.NORTH);
-        panelTableContact.add(tableContacts, BorderLayout.CENTER);
-        panCENTER.add(panelTableContact,BorderLayout.CENTER);
-        
-        
-          
-      
-        
-        // Liste de symboles south/west
-        
-        panSWEST.setLayout(new GridLayout(Symbole.values().length,1));
+        panSymboles.setLayout(new GridLayout(Symbole.values().length,1));
         checkSymboles = new JCheckBox[Symbole.values().length];
         listeCheckSymboles = new HashSet() ;
         for (Symbole symbole : Symbole.values()){
                 checkSymboles[symbole.ordinal()]= new JCheckBox(symbole.name()) ;
                 listeCheckSymboles.add(checkSymboles[symbole.ordinal()]);
-                panSWEST.add(checkSymboles[symbole.ordinal()]);
+                panSymboles.add(checkSymboles[symbole.ordinal()]);
             }
-
+        
+        
+        
+          
       
-        this.add(panWorkspace);
+        
+       
+        // Tableau liste contacts
+        
+
+
+       String[] entetes = {"Prénom", "Nom"};
+        model = new DefaultTableModel();
+        model.setColumnIdentifiers(entetes);
+        
+        tableContacts = new JTable(model);
+        panTableContact = new JPanel(new BorderLayout());
+        panTableContact.add(tableContacts.getTableHeader(), BorderLayout.NORTH);
+        panTableContact.add(tableContacts, BorderLayout.CENTER);
+        
+        
+      
+        panGauche.add(panNomGroupe);
+        panGauche.add(panLogo);
+        panGauche.add(panSymboles);
+        panGauche.add(panOption);
+        panDroite.add(panTableContact);
     }
     
     /**
