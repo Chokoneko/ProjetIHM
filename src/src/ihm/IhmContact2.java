@@ -1,7 +1,7 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package m2105.ihm;
+package src.ihm;
 //TODO changer police et couleur pour toute la page (par defaut)
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -32,8 +32,9 @@ import m2105.nf.Region;
  */
 public class IhmContact2 extends JPanel {
 
-    private GridLayout grilleContacts;
-    
+    private JTextField       champNom, champPrenom, champMail, champTel;
+    private GridLayout gridContacts, gridInfoPerso, gridCoordonnées, gridDispoHobby;
+    private JPanel panInfoPerso, panCoordonnées, panDispoHobby, panFin, panNomPrenom;
   
     
     
@@ -52,10 +53,33 @@ public class IhmContact2 extends JPanel {
     private void initUIComponents() {      
 
         
-        grilleContacts = new GridLayout(4,1);
-        
+        gridContacts = new GridLayout(4,1);
+        gridInfoPerso = new GridLayout(2,1);
+        gridCoordonnées = new GridLayout(2,1);
+        gridDispoHobby = new GridLayout(2,1);
   
+        this.setLayout(gridContacts);
+        panInfoPerso.setBorder(BorderFactory.createTitledBorder("Informations personnelles"));
+	panCoordonnées.setBorder(BorderFactory.createTitledBorder("Coordonnées"));
+	panDispoHobby.setBorder(BorderFactory.createTitledBorder("Préférences"));
    
+        panInfoPerso.setLayout(gridInfoPerso);
+        panCoordonnées.setLayout(gridCoordonnées);
+        panDispoHobby.setLayout(gridDispoHobby);
+        
+        panNomPrenom.add(new JLabel("Nom"));
+        champNom = new JTextField(30);
+        panNomPrenom.add(champNom);
+        
+        panNomPrenom.add(new JLabel("Prenom"));
+        champPrenom = new JTextField(30);
+        panNomPrenom.add(champPrenom);
+        
+        this.add(panInfoPerso);
+        this.add(panCoordonnées);
+        this.add(panDispoHobby);       
+        this.add(panFin);
+        
     }
     
     /**
