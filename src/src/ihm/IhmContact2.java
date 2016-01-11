@@ -11,6 +11,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.Calendar;
 import java.util.HashSet;
+import javafx.scene.control.ComboBox;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -34,9 +35,10 @@ public class IhmContact2 extends JPanel {
 
     private JTextField       champNom, champPrenom, champMail, champTel;
     private GridLayout gridContacts, gridInfoPerso, gridCoordonnées, gridDispoHobby;
-    private JPanel panInfoPerso, panCoordonnées, panDispoHobby, panFin, panNomPrenom;
-  
+    private JPanel panInfoPerso, panCoordonnées, panDispoHobby, panFin, panNomPrenom, panDate;
+    private JComboBox comboJours, comboMois, comboAnnee, comboRegion;
     
+    private String []        listeMois;
     
     /*
      * Formulaire pour saisir les informations relatives à un contact
@@ -74,6 +76,37 @@ public class IhmContact2 extends JPanel {
         panNomPrenom.add(new JLabel("Prenom"));
         champPrenom = new JTextField(30);
         panNomPrenom.add(champPrenom);
+        
+        
+        // ComboBox pour DATE de naissance
+            // jours
+        comboJours = new JComboBox();
+        for (int i = 1 ; i <= 31 ; i++){
+            comboJours.addItem(i);
+        }
+        panDate.add(comboJours);
+        
+            // mois
+        listeMois = new String[Mois.values().length];
+        for (Mois mois : Mois.values()){
+            listeMois[mois.ordinal()] = mois.toString();
+           
+        }
+        comboMois = new JComboBox(listeMois);
+        panDate.add(comboMois);  
+        
+                
+            // année
+        Calendar currentDate = Calendar.getInstance();
+        comboAnnee = new JComboBox();
+        for (int i = currentDate.get(Calendar.YEAR)-100 ; i <= currentDate.get(Calendar.YEAR) ; i++){ // now() en java
+            comboAnnee.addItem(i); 
+        }
+        panDate.add(comboAnnee);
+        
+        // Fin Combo DATE
+        
+        panInfoPerso.add(panDate);
         
         this.add(panInfoPerso);
         this.add(panCoordonnées);
