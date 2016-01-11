@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import m2105.ihm.IhmContact;
+import src.ihm.IhmContact2;
 import src.ihm.IhmGroupe;
 import m2105.nf.Contact;
 import m2105.nf.DispoSortie;
@@ -28,7 +28,7 @@ import m2105.nf.Symbole;
 public class Main {
 
     private static Contact contact;             // Un contact que l'on va afficher / modifier
-    public static IhmContact ihmContact;        // L'IHM permettant d'afficher un contact
+    public static IhmContact2 ihmContact;        // L'IHM permettant d'afficher un contact
     public static JFrame window1;               // Une fenêtre dans laquelle on va afficher l'IHM du contact
     public static JFrame window2;               // Une fenêtre dans laquelle on va afficher l'IHM du groupe
     private static Groupe groupe;
@@ -78,7 +78,7 @@ public class Main {
         
 
         // Instanciation de l'IHM d'un contact
-        ihmContact = new IhmContact();
+        ihmContact = new IhmContact2();
         // Affectation des attributs du contact aux champs de l'IHM
         ihmContact.displayContact(contact);
 
