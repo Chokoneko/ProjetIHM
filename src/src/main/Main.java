@@ -156,37 +156,37 @@ public class Main {
 
 
         // Ajout de l'IHM dans la fenêtre
-        window2.getContentPane().setLayout(new BorderLayout());
-        window2.add(ihmGroupe, BorderLayout.CENTER);
+        //window2.getContentPane().setLayout(new BorderLayout());
+        window2.add(ihmGroupe/*, BorderLayout.CENTER*/);
         
         // Ajout d'un bouton dans la fenêtre (pour tester la méthode majGroupeDepuisIhm de IhmGroupe)
-        JButton testGet = new JButton("Tester IhmGroupe.majGroupeDepuisIhm()");
-        window2.add(testGet, BorderLayout.SOUTH);
+//        JButton testGet = new JButton("Tester IhmGroupe.majGroupeDepuisIhm()");
+//        window2.add(testGet, BorderLayout.SOUTH);
         
         // Gestion des événements (ici le clic) du bouton
-        testGet.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-//                String message;
-                
-                ihmGroupe.majGroupeDepuisIhm(groupe);
-                
-                // Affiche le contact sur la console
-                groupe.afficherDansConsole("");
-                
-//                message  = "Nom du groupe : " + groupe.getNom() + "\n";
+//        testGet.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+////                String message;
 //                
-//                for(Contact contact : groupe.getContacts()) {
-//                    message += "contacts : " + contact + "\n"; 
-//                }
+//                ihmGroupe.majGroupeDepuisIhm(groupe);
 //                
-//                JOptionPane.showMessageDialog(
-//                        window2,
-//                        message, 
-//                        "Résultat du test", 
-//                        JOptionPane.PLAIN_MESSAGE);
-            }
-        });
+//                // Affiche le contact sur la console
+//                groupe.afficherDansConsole("");
+//                
+////                message  = "Nom du groupe : " + groupe.getNom() + "\n";
+////                
+////                for(Contact contact : groupe.getContacts()) {
+////                    message += "contacts : " + contact + "\n"; 
+////                }
+////                
+////                JOptionPane.showMessageDialog(
+////                        window2,
+////                        message, 
+////                        "Résultat du test", 
+////                        JOptionPane.PLAIN_MESSAGE);
+//            }
+//        });
         
         window2.setVisible(true);        
     }    

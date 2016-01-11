@@ -16,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.HashSet;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
@@ -89,13 +90,14 @@ public class IhmGroupe extends javax.swing.JPanel {
         panNomGroupe.add(new JLabel("Nom :"));
         champNom = new JTextField(30);
         panNomGroupe.add(champNom);
-        
+        panNomGroupe.setBorder(BorderFactory.createLineBorder(Color.gray));
        
         // Canvas zone de dessin south/center
+       panLogo = new JPanel() ;
         ihmLogo = new IhmLogo();        
         
         panLogo.add(ihmLogo);
-
+        panLogo.setBorder(BorderFactory.createTitledBorder("Logo"));
           // Boutton effacer     south   / east
         btnEffacer = new JButton("Effacer");
         panLogo.add(btnEffacer);
@@ -207,12 +209,12 @@ public class IhmGroupe extends javax.swing.JPanel {
         panOption.add(btnValider);
         panOption.add(btnAnnuler);
         panOption.add(btnSupprGrp);
-        
+        panOption.setBorder(BorderFactory.createLineBorder(Color.GRAY));
         
         
          // Liste de symboles 
-        
-        panSymboles.setLayout(new GridLayout(Symbole.values().length,1));
+        panSymboles = new JPanel();
+        //panSymboles.setLayout(new GridLayout(Symbole.values().length,1));
         checkSymboles = new JCheckBox[Symbole.values().length];
         listeCheckSymboles = new HashSet() ;
         for (Symbole symbole : Symbole.values()){
@@ -221,7 +223,7 @@ public class IhmGroupe extends javax.swing.JPanel {
                 panSymboles.add(checkSymboles[symbole.ordinal()]);
             }
         
-        
+         panSymboles.setBorder(BorderFactory.createTitledBorder("Symboles"));
         
           
       
@@ -231,7 +233,7 @@ public class IhmGroupe extends javax.swing.JPanel {
         
 
 
-       String[] entetes = {"Prénom", "Nom"};
+       String[] entetes = {"Prénom", "Nom","Mail","Tel"};
         model = new DefaultTableModel();
         model.setColumnIdentifiers(entetes);
         
@@ -260,7 +262,7 @@ public class IhmGroupe extends javax.swing.JPanel {
             champNom.setText(groupe.getNom());
             // tableau contact
             for (Contact contact : groupe.getContacts()) {
-                String[] ligne = new String[] {contact.getNom(), contact.getPrenom()};
+                String[] ligne = new String[] {contact.getNom(), contact.getPrenom(),contact.getEmail(),contact.getNumeroTelephone() };
                 model.addRow(ligne);
             }
             //logo
