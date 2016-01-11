@@ -1,0 +1,73 @@
+/*
+ * Module 2105 : module IHM : Carnet d'adresse
+ */
+package m2105.ihm;
+
+import m2105.nf.Contact;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+/**
+ * @author IUT2
+ */
+public class IhmContact extends JPanel {
+
+    private JTextField       champNom; // Widget de type champ texte pour afficher et saisir le nom du contact
+    
+    /*
+     * Formulaire pour saisir les informations relatives à un contact
+     */
+    public IhmContact() {
+        super();
+
+        initUIComponents();
+    }
+    
+    /**
+     * Crée et positionne les composants graphiques constituant l'interface
+     */
+    private void initUIComponents() {      
+        /** Pour l'exemple **/
+        
+        // Ajoute dans l'IHM un libellé + un champ pour la saisie/Affichage du nom
+        this.add(new JLabel("Nom :"));
+        champNom = new JTextField(30);
+        this.add(champNom);
+        
+        
+        /** TP 1 : à compléter **/
+    }
+    
+    /**
+     * Affecte des valeurs au formulaire de fiche contact
+     * @param contact un contact pour mettre à jour à l'IHM
+     * @return vrai si ok
+     */
+    public boolean displayContact(Contact contact) {
+        if (contact == null) { return false; }
+                
+        // Nom du contact
+        champNom.setText(contact.getNom());        
+
+        /** TP 1 : à compléter **/
+        
+        return true;
+    }
+    
+    /**
+     * Relit les 
+     * @param contact un contact à mettre à jour à partir de l'IHM
+     * @return vrai si ok
+     */
+    public Boolean modifyContact(Contact contact) {
+        if (contact == null) { return false; }
+
+        // Affecte la valeur du champ nom à l'attribut nom du contact
+        contact.setNom(champNom.getText()); 
+        
+        // TODO : TP1 - renseigner les autres attributs du contact à partir des champs de l'IHM
+
+        return true;
+    }
+}
