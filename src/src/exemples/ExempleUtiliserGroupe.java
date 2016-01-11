@@ -1,17 +1,17 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package exemples;
+package src.exemples;
 
 /**
  * @author IUT2
  */
 import java.awt.Point;
-import m2105.nf.Contact;
-import m2105.nf.Symbole;
-import m2105.nf.Groupe;
-import m2105.nf.Mois;
-import m2105.nf.Region;
+import src.nf.Contact;
+import src.nf.Symbole;
+import src.nf.Groupe;
+import src.nf.Mois;
+import src.nf.Region;
 
 /*
  * Cette classe illustre l'utilisation du code du noyau fonctionnel par l'emploi

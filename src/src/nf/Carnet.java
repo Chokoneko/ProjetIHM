@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package m2105.nf;
+package src.nf;
 
 import java.awt.Point;
 import java.io.File;

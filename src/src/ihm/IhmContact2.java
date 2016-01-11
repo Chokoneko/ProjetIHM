@@ -22,11 +22,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import m2105.nf.Contact;
-import m2105.nf.DispoSortie;
-import m2105.nf.Hobby;
-import m2105.nf.Mois;
-import m2105.nf.Region;
+import src.nf.Contact;
+import src.nf.DispoSortie;
+import src.nf.Hobby;
+import src.nf.Mois;
+import src.nf.Region;
 
 /**
  * @author IUT2
@@ -127,8 +127,7 @@ public class IhmContact2 extends JPanel {
         for (Hobby hobby : Hobby.values()){
             checkHobbies[hobby.ordinal()]= new JCheckBox(hobby.toString());
             panHobbies.add(checkHobbies[hobby.ordinal()]);
-            listeCheckHobbies.add( checkHobbies[hobby.ordinal()]);
-            
+            listeCheckHobbies.add( checkHobbies[hobby.ordinal()]);          
         }
         
                 //disponibilité
@@ -145,6 +144,12 @@ public class IhmContact2 extends JPanel {
            panDispo.add(radioDispo[dispo.ordinal()]); 
            listeRadioDispo.add(radioDispo[dispo.ordinal()]);
         }   
+        
+        
+        panDispoHobby.add(panDispo);
+        panDispoHobby.add(panHobbies);
+        
+        
         
         this.add(panInfoPerso);
         this.add(panCoordonnées);

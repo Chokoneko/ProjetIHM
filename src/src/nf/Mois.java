@@ -1,7 +1,7 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package m2105.nf;
+package src.nf;
 
 /**
  *

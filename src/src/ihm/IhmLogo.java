@@ -1,7 +1,7 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package m2105.ihm;
+package src.ihm;
 
 import java.awt.Point;
 import java.awt.Color;

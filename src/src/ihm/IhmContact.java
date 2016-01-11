@@ -21,11 +21,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import m2105.nf.Contact;
-import m2105.nf.DispoSortie;
-import m2105.nf.Hobby;
-import m2105.nf.Mois;
-import m2105.nf.Region;
+import src.nf.Contact;
+import src.nf.DispoSortie;
+import src.nf.Hobby;
+import src.nf.Mois;
+import src.nf.Region;
 
 /**
  * @author IUT2

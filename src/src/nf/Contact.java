@@ -2,7 +2,7 @@
  * Module 2105 : Classe Contact
  * Cette classe représente les contacts d'un carnet d'adresse
  */
-package m2105.nf;
+package src.nf;
 
 import java.util.HashSet;
 

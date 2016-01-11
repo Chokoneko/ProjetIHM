@@ -12,13 +12,13 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import src.ihm.IhmContact2;
 import src.ihm.IhmGroupe;
-import m2105.nf.Contact;
-import m2105.nf.DispoSortie;
-import m2105.nf.Groupe;
-import m2105.nf.Hobby;
-import m2105.nf.Mois;
-import m2105.nf.Region;
-import m2105.nf.Symbole;
+import src.nf.Contact;
+import src.nf.DispoSortie;
+import src.nf.Groupe;
+import src.nf.Hobby;
+import src.nf.Mois;
+import src.nf.Region;
+import src.nf.Symbole;
 
 /**
  *

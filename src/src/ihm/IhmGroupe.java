@@ -23,9 +23,9 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import m2105.nf.Contact;
-import m2105.nf.Groupe;
-import m2105.nf.Symbole;
+import src.nf.Contact;
+import src.nf.Groupe;
+import src.nf.Symbole;
 
 /**
  *
