@@ -1,7 +1,7 @@
 /*
  * Module 2105 : module IHM : Carnet d'adresse
  */
-package m2105.main;
+package src.main;
 
 import java.awt.BorderLayout;
 import java.awt.Point;
@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import m2105.ihm.IhmContact;
-import m2105.ihm.IhmGroupe;
+import src.ihm.IhmGroupe;
 import m2105.nf.Contact;
 import m2105.nf.DispoSortie;
 import m2105.nf.Groupe;
