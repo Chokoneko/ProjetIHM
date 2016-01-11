@@ -40,6 +40,7 @@ public class IhmContact2 extends JPanel {
     private JPanel                  panDispoHobby = new JPanel();
     private JPanel                  panOptions = new JPanel();
     private JPanel                  panNomPrenom = new JPanel();
+    private JPanel                  panDateComplet = new JPanel();
     private JPanel                  panDate = new JPanel();
     private JPanel                  panMailTel = new JPanel();
     private JPanel                  panHobbies = new JPanel();
@@ -91,13 +92,14 @@ public class IhmContact2 extends JPanel {
         
         
         panNomPrenom.add(new JLabel("Nom : "));
-        champNom = new JTextField(30);
+        champNom = new JTextField(15);
         panNomPrenom.add(champNom);
         
         panNomPrenom.add(new JLabel("Prenom : "));
-        champPrenom = new JTextField(30);
+        champPrenom = new JTextField(15);
         panNomPrenom.add(champPrenom);
         
+        panInfoPerso.add(panNomPrenom);
         
         // ComboBox pour DATE de naissance
             // jours
@@ -126,12 +128,13 @@ public class IhmContact2 extends JPanel {
         
         // Fin Combo DATE
         
-        panInfoPerso.add(new JLabel("Date de naissance : "));
-        panInfoPerso.add(panDate);
+        panDateComplet.add(new JLabel("Date de naissance : "));
+        panDateComplet.add(panDate);
+        panInfoPerso.add(panDateComplet);
         
         // Coordonnées
         panMailTel.add(new JLabel("Mail : "));
-        champMail = new JTextField(50);
+        champMail = new JTextField(30);
         panMailTel.add(champMail);
         
         panMailTel.add(new JLabel("Telephone : "));
